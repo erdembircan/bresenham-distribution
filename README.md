@@ -3,7 +3,7 @@
 > *The four lines find you.*
 
 An interactive companion to the essay
-[**Cuban Music, Neutron Pulses, and a 1965 Plotter**](https://erdembircan.com/blog/cuban-music-neutron-pulses-1965-plotter)
+[**Cuban Music, Neutron Pulses, and a 1965 Plotter**](https://erdembircan.github.io/blog/cuban-music-neutron-pulses-1965-plotter)
 on convergent discovery in mathematics.
 
 This page demonstrates that one tiny algorithm — **four lines of code from
