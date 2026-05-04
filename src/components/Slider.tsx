@@ -36,8 +36,12 @@ export function Slider({
       </span>
       <span className="flex items-baseline gap-3">
         <span
-          className="font-serif text-[28px] leading-none"
-          style={{ fontVariationSettings: '"opsz" 60, "SOFT" 60', color: ACCENT[accent] }}
+          className="font-serif text-[28px] leading-none inline-block text-right"
+          style={{
+            fontVariationSettings: '"opsz" 60, "SOFT" 60',
+            color: ACCENT[accent],
+            minWidth: `${String(max).length}ch`,
+          }}
           data-tabular
         >
           {value}
