@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paper & ink */
+  --color-paper: #f5f1e8;
+  --color-paper-warm: #ede7d8;
+  --color-ink: #1a1612;
+  --color-ink-soft: #4a4036;
+  --color-ink-mute: #8a7f72;
+  --color-rule: #c8bfae;
+  --color-rule-faint: #e0d7c4;
+
+  /* Three accent inks — restrained, printed-page palette */
+  --color-bres: #2f6b3f;       /* deep forest, "correct" */
+  --color-bres-soft: #4a8f5e;
+  --color-bres-tint: rgba(47, 107, 63, 0.12);
+  --color-mod: #a23b3b;         /* muted brick, "the problem" */
+  --color-mod-soft: #c25656;
+  --color-mod-tint: rgba(162, 59, 59, 0.10);
+  /* Rhythm uses the same forest green as Bresenham — it IS Bresenham, applied to music */
+  --color-rhythm: #2f6b3f;
+  --color-rhythm-soft: #4a8f5e;
+  --color-rhythm-tint: rgba(47, 107, 63, 0.12);
+
+  /* Typography */
+  --font-serif: "Fraunces", "Source Serif Pro", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
+}
+
+html, body, #root {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--font-serif);
+  font-feature-settings: "ss01", "ss02", "kern", "liga";
+  font-variation-settings: "opsz" 18, "SOFT" 30;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle paper grain — generated noise via SVG */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1  0 0 0 0 0.08  0 0 0 0 0.05  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode: multiply;
+}
+
+#root { position: relative; z-index: 1; }
+
+* {
+  font-synthesis: none;
+}
+
+/* Tabular numerals everywhere — no figure-shifting in tables/charts */
+.font-mono, code, .num, [data-tabular] {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum", "lnum";
+}
+
+/* Fraunces opsz at large sizes */
+h1, .display { font-variation-settings: "opsz" 144, "SOFT" 50; }
+h2 { font-variation-settings: "opsz" 60, "SOFT" 40; }
