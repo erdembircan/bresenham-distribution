@@ -110,8 +110,9 @@ function MethodPanel({ method, k }: { method: Method; k: number }) {
                   height: `${h}%`,
                   minHeight: 2,
                   background: isExtra ? accentVar : tintVar,
-                  border: `1px solid ${isExtra ? accentVar : 'var(--color-rule)'}`,
-                  borderBottom: 'none',
+                  borderTop: `1px solid ${isExtra ? accentVar : 'var(--color-rule)'}`,
+                  borderLeft: `1px solid ${isExtra ? accentVar : 'var(--color-rule)'}`,
+                  borderRight: `1px solid ${isExtra ? accentVar : 'var(--color-rule)'}`,
                 }}
                 title={`bucket ${i} = ${count}`}
               />
