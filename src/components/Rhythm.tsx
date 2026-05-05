@@ -305,9 +305,9 @@ export function Rhythm() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-[color:var(--color-rule)] pt-5">
-          <Slider label="Steps" symbol="N" value={steps} min={2} max={16} accent="rhythm" onChange={setSteps} />
-          <Slider label="Beats" symbol="K" value={beats} min={1} max={steps} accent="rhythm" onChange={(v) => setBeats(Math.min(v, steps))} />
-          <Slider label="Tempo" symbol="bpm" value={bpm} min={60} max={200} accent="rhythm" onChange={setBpm} />
+          <Slider label="Steps" symbol="N" value={steps} min={2} max={16} reserveWidth={200} accent="rhythm" onChange={setSteps} />
+          <Slider label="Beats" symbol="K" value={beats} min={1} max={steps} reserveWidth={200} accent="rhythm" onChange={(v) => setBeats(Math.min(v, steps))} />
+          <Slider label="Tempo" symbol="bpm" value={bpm} min={60} max={200} reserveWidth={200} accent="rhythm" onChange={setBpm} />
         </div>
 
         <button

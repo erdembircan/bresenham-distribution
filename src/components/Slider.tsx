@@ -8,6 +8,7 @@ type Props = {
   max: number;
   step?: number;
   accent?: 'bres' | 'mod' | 'rhythm' | 'ink';
+  reserveWidth?: number;
   onChange: (v: number) => void;
 };
 
@@ -26,6 +27,7 @@ export function Slider({
   max,
   step = 1,
   accent = 'ink',
+  reserveWidth,
   onChange,
 }: Props) {
   return (
@@ -40,7 +42,7 @@ export function Slider({
           style={{
             fontVariationSettings: '"opsz" 60, "SOFT" 60',
             color: ACCENT[accent],
-            minWidth: `${String(max).length}ch`,
+            minWidth: `${String(reserveWidth ?? max).length}ch`,
           }}
           data-tabular
         >
